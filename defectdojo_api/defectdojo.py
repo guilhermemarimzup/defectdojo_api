@@ -696,9 +696,6 @@ class DefectDojoAPI(object):
 
         if references:
             data['references'] = references
-
-        if build:
-            data['build_id'] = build
 	
         if false_p:
             data['false_p'] = false_p
