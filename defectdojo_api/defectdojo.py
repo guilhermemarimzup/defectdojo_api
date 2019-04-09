@@ -631,7 +631,7 @@ class DefectDojoAPI(object):
 
     def set_finding(self, finding_id, product_id, engagement_id, test_id, title=None, description=None, severity=None,
         cwe=None, date=None, user_id=None, impact=None, active=None, verified=None,
-        mitigation=None, references=None):
+        mitigation=None, references=None, build=None, false_p=None):
 
         """Updates a finding with the given properties.
 
@@ -699,6 +699,9 @@ class DefectDojoAPI(object):
 
         if build:
             data['build_id'] = build
+	
+	if false_p:
+            data['false_p'] = false_p
 
         return self._request('PUT', 'findings/' + str(finding_id) + '/', data=data)
 
