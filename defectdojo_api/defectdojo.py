@@ -700,7 +700,7 @@ class DefectDojoAPI(object):
         if build:
             data['build_id'] = build
 	
-	if false_p:
+        if false_p:
             data['false_p'] = false_p
 
         return self._request('PUT', 'findings/' + str(finding_id) + '/', data=data)
