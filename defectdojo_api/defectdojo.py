@@ -417,6 +417,22 @@ class DefectDojoAPI(object):
             params['engagement__in'] = engagement_in
 
         return self._request('GET', 'tests/', params)
+    
+    ###### Test Types API #######
+    def list_test_types(self, name=None, limit=20):
+        """Retrieves all the tests.
+
+        :param name_contains: Search by product name.
+        :param limit: Number of records to return.
+
+        """
+
+        params  = {}
+        if name:
+            params['name'] = name
+
+
+        return self._request('GET', 'test_types/', params)
 
     def get_test(self, test_id):
         """Retrieves a test using the given test id.
