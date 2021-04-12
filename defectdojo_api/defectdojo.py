@@ -9,13 +9,13 @@ from . import __version__ as version
 class DefectDojoAPI(object):
     """An API wrapper for DefectDojo."""
 
-    def __init__(self, host, api_key, user, api_version='v1', verify_ssl=True, timeout=60, proxies=None, user_agent=None, cert=None, debug=False):
+    def __init__(self, host, api_key, user, api_version='v2', verify_ssl=True, timeout=60, proxies=None, user_agent=None, cert=None, debug=False):
         """Initialize a DefectDojo API instance.
 
         :param host: The URL for the DefectDojo server. (e.g., http://localhost:8000/DefectDojo/)
         :param api_key: The API key generated on the DefectDojo API key page.
         :param user: The user associated with the API key.
-        :param api_version: API version to call, the default is v1.
+        :param api_version: API version to call, the default is v2.
         :param verify_ssl: Specify if API requests will verify the host's SSL certificate, defaults to true.
         :param timeout: HTTP timeout in seconds, default is 30.
         :param proxis: Proxy for API requests.
@@ -1135,7 +1135,7 @@ class DefectDojoAPI(object):
 
         headers = {
             'User-Agent': self.user_agent,
-            'Authorization' : "ApiKey " + self.user + ":" + self.api_key
+            'Authorization' : "Token " + self.api_key
         }
 
         if not files:
