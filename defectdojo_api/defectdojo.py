@@ -4,7 +4,7 @@ import requests.exceptions
 import requests.packages.urllib3
 
 from . import __version__ as version
-
+from datetime import datetime
 
 class DefectDojoAPI(object):
     """An API wrapper for DefectDojo."""
@@ -454,11 +454,11 @@ class DefectDojoAPI(object):
         """
 
         data = {
-            'engagement': self.get_engagement_uri(engagement_id),
+            'engagement': engagement_id,
             'test_type': test_type,
             'environment': environment,
-            'target_start': target_start,
-            'target_end': target_end,
+            'target_start': datetime.strptime(target_start, '%Y-%m-%d'),
+            'target_end': datetime.strptime(target_start, '%Y-%m-%d'),
             'percent_complete': percent_complete
         }
 
