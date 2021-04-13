@@ -641,7 +641,7 @@ class DefectDojoAPI(object):
             'under_review' : under_review,
             'under_defect_review' : under_defect_review,
             'numerical_severity' : numerical_severity,
-            'found_by': user_id
+            'found_by': [user_id]
         }
 
         return self._request('POST', 'findings/', data=data)
