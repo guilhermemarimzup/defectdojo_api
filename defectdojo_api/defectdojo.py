@@ -457,8 +457,8 @@ class DefectDojoAPI(object):
             'engagement': engagement_id,
             'test_type': test_type,
             'environment': environment,
-            'target_start': datetime.strptime(target_start, '%Y-%m-%d'),
-            'target_end': datetime.strptime(target_start, '%Y-%m-%d'),
+            'target_start': str(datetime.strptime(target_start, '%Y-%m-%d')),
+            'target_end': str(datetime.strptime(target_start, '%Y-%m-%d')),
             'percent_complete': percent_complete
         }
 
