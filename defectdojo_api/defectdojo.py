@@ -594,7 +594,7 @@ class DefectDojoAPI(object):
         test_id, user_id, impact, active, verified, mitigation, references=None, build=None, line=0,
         file_path=None, static_finding="False", dynamic_finding="False", false_p="False",
         duplicate="False",  out_of_scope="False", under_review="False", under_defect_review="False",
-        numerical_severity=None):
+        numerical_severity="S10"):
 
         """Creates a finding with the given properties.
 
@@ -623,7 +623,7 @@ class DefectDojoAPI(object):
             'date': date,
             'product': self.get_product_uri(product_id),
             'engagement': self.get_engagement_uri(engagement_id),
-            'test': self.get_test_uri(test_id),
+            'test': test_id,
             'reporter': self.get_user_uri(user_id),
             'impact': impact,
             'active': active,
