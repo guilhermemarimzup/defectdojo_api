@@ -1163,6 +1163,7 @@ class DefectDojoAPI(object):
                 if response.status_code == 201: #Created new object
                     object_id = response.headers["Location"].split('/')
                     key_id = object_id[-2]
+                    key_id = response.json()['id']
                     try:
                         data = int(key_id)
                     except:
