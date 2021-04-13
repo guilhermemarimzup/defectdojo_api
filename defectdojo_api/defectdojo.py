@@ -1221,7 +1221,7 @@ class DefectDojoResponse(object):
         return int(self.data)
 
     def count(self):
-        return self.data["meta"]["total_count"]
+        return self.data["count"]
 
     def data_json(self, pretty=False):
         """Returns the data as a valid JSON string."""
